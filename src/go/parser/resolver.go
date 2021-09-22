@@ -453,6 +453,7 @@ func (r *resolver) Visit(node ast.Node) ast.Visitor {
 				// Go spec: The scope of a type identifier declared inside a function begins
 				// at the identifier in the TypeSpec and ends at the end of the innermost
 				// containing block.
+				// ^^^
 				r.declare(spec, nil, r.topScope, ast.Typ, spec.Name)
 				if spec.TypeParams != nil {
 					r.openScope(spec.Pos())
